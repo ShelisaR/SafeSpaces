@@ -1,0 +1,7 @@
+{
+  "name": "SafeSpaces",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
