@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-tab3',
@@ -9,4 +10,7 @@ export class Tab3Page {
 
   constructor() {}
 
+  onSubmit(form: NgForm) {
+    console.log(form);
+  }
 }
