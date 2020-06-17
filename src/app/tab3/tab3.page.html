@@ -21,12 +21,12 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Name of Business<ion-text color="danger">*</ion-text></ion-label>
+      <ion-label position="floating">Name of Business<ion-text color="danger">*</ion-text></ion-label>
       <ion-input required type="text"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Type<ion-text color="danger">*</ion-text></ion-label>
+      <ion-label position="floating">Type<ion-text color="danger">*</ion-text></ion-label>
       <ion-select interface="popover">
         <ion-select-option value="restaurant">Restaurant</ion-select-option>
         <ion-select-option value="grocery">Grocery Store</ion-select-option>
@@ -37,7 +37,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label position="stacked">Location<ion-text color="danger">*</ion-text></ion-label>
+      <ion-label position="floating">Location<ion-text color="danger">*</ion-text></ion-label>
       <ion-input placeholder="Address Line 1" required></ion-input>
       <ion-input placeholder="Address Line 2"></ion-input>
       <ion-input placeholder="City" required></ion-input>
@@ -52,6 +52,7 @@
   </ion-list>
 
   <div class="ion-padding">
+    <ion-alert-controller></ion-alert-controller>
     <ion-button expand="block" type="submit">Submit</ion-button>
   </div>
 </ion-content>
