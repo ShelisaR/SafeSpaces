@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Forms
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,49 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
+      <ion-title size="large">Forms</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <app-explore-container name="Tab 3 page"></app-explore-container>
+
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <p>Would you like to suggest the next place for us to test? Fill out the form below!</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Name of Business<ion-text color="danger">*</ion-text></ion-label>
+      <ion-input required type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Type<ion-text color="danger">*</ion-text></ion-label>
+      <ion-select interface="popover">
+        <ion-select-option value="restaurant">Restaurant</ion-select-option>
+        <ion-select-option value="grocery">Grocery Store</ion-select-option>
+        <ion-select-option value="gas">Gas Station</ion-select-option>
+        <ion-select-option value="gym">Gym</ion-select-option>
+        <ion-select-option value="other">Other</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Location<ion-text color="danger">*</ion-text></ion-label>
+      <ion-input placeholder="Address Line 1" required></ion-input>
+      <ion-input placeholder="Address Line 2"></ion-input>
+      <ion-input placeholder="City" required></ion-input>
+      <ion-input placeholder="State" required></ion-input>
+      <ion-input placeholder="Zip Code" required type="number"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Comments</ion-label>
+      <ion-textarea auto-grow="true"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  
+  <div class="ion-padding">
+    <ion-button expand="block">Submit</ion-button>
+  </div>
 </ion-content>
