@@ -15,44 +15,46 @@
 
   <app-explore-container name="Tab 3 page"></app-explore-container>
 
-  <ion-list lines="full" class="ion-no-margin ion-no-padding">
-    <ion-item>
-      <p>Do you have a place you want us to test next? Let us know!</p>
-    </ion-item>
+  <form #suggestion="ngForm" (ngSubmit)="onSubmit(suggestion)">
+    <ion-list lines="full" class="ion-padding">
+      <ion-item padding>
+        <p>Do you have a place you want us to test next? Let us know!</p>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Name of Business<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input required type="text"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Name of Business<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" ngModel name="bus-name"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Type<ion-text color="danger">*</ion-text></ion-label>
-      <ion-select interface="popover">
-        <ion-select-option value="restaurant">Restaurant</ion-select-option>
-        <ion-select-option value="grocery">Grocery Store</ion-select-option>
-        <ion-select-option value="gas">Gas Station</ion-select-option>
-        <ion-select-option value="gym">Gym</ion-select-option>
-        <ion-select-option value="other">Other</ion-select-option>
-      </ion-select>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Type<ion-text color="danger">*</ion-text></ion-label>
+        <ion-select interface="popover" ngModel name="bus-type" required>
+          <ion-select-option value="restaurant">Restaurant</ion-select-option>
+          <ion-select-option value="grocery">Grocery Store</ion-select-option>
+          <ion-select-option value="gas">Gas Station</ion-select-option>
+          <ion-select-option value="gym">Gym</ion-select-option>
+          <ion-select-option value="other">Other</ion-select-option>
+        </ion-select>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Location<ion-text color="danger">*</ion-text></ion-label>
-      <ion-input placeholder="Address Line 1" required></ion-input>
-      <ion-input placeholder="Address Line 2"></ion-input>
-      <ion-input placeholder="City" required></ion-input>
-      <ion-input placeholder="State" required></ion-input>
-      <ion-input placeholder="Zip Code" required type="number"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Location<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input placeholder="Address Line 1" required ngModel name="address"></ion-input>
+        <ion-input placeholder="Address Line 2"></ion-input>
+        <ion-input placeholder="City" required ngModel name ="city"></ion-input>
+        <ion-input placeholder="State" required ngModel name="state"></ion-input>
+        <ion-input placeholder="Zip Code" required type="number" ngModel name="zip-code"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="stacked">Comments</ion-label>
-      <ion-textarea auto-grow="true"></ion-textarea>
-    </ion-item>
-  </ion-list>
+      <ion-item>
+        <ion-label position="stacked">Comments</ion-label>
+        <ion-textarea auto-grow="true"></ion-textarea>
+      </ion-item>
+    </ion-list>
 
-  <div class="ion-padding">
-    <ion-alert-controller></ion-alert-controller>
-    <ion-button expand="block" type="submit">Submit</ion-button>
-  </div>
+    <div class="ion-padding">
+      <ion-alert-controller></ion-alert-controller>
+      <ion-button expand="block" type="submit" [disabled]="!suggestion.valid">Submit</ion-button>
+    </div>
+  </form>
 </ion-content>
