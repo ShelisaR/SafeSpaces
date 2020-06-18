@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms'; // for the suggestion form
 import { AlertController } from '@ionic/angular'; // for the confirmation of the form being sent
-// import { type } from 'os';
 
 @Component({
   selector: 'app-tab3',
