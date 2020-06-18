@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms'; // added for the suggestion form
-import { AlertController } from '@ionic/angular'; // added for the confirmation of the form being sent
+import { NgForm } from '@angular/forms'; // for the suggestion form
+import { AlertController } from '@ionic/angular'; // for the confirmation of the form being sent
 import { type } from 'os';
 
 @Component({
