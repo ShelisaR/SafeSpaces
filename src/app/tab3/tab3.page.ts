@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms'; // for the suggestion form
 import { AlertController } from '@ionic/angular'; // for the confirmation of the form being sent
 
-
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -14,8 +13,8 @@ export class Tab3Page {
 
   async alertFormSent() {
     const alert = await this.alertController.create({
-      header: 'Sent successfully',
-      message: 'Thank you!',
+      header: 'Sent!',
+      message: 'Your suggestion has been sent successfully. Thank you!',
       buttons: ['OK']
     });
     await alert.present();
