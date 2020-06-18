@@ -4,9 +4,8 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\tab2",
-    "\\src\\app\\tabs",
-    "\\src\\assets"
+    "\\src\\app\\tab2\\expansion-styling"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
+  "SelectedNode": "\\src\\app\\tab2\\expansion-styling\\expansion-styling.page.ts",
   "PreviewInSolutionExplorer": false
 }

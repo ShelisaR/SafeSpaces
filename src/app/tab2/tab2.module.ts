@@ -5,8 +5,19 @@ import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+import { ExpansionStylingPage } from "./expansion-styling/expansion-styling.page";
+
+import {
+    IgxIconModule,
+    IgxButtonModule,
+    IgxExpansionPanelModule,
+    IgxCarouselModule ,
+    IgxInputGroupModule
+} from "igniteui-angular";
+
+
+
 
 @NgModule({
   imports: [
@@ -15,12 +26,16 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
         Tab2PageRoutingModule,
-   
+        IgxIconModule,
+        IgxButtonModule,
+        IgxExpansionPanelModule,
+        IgxCarouselModule ,
+        IgxInputGroupModule
   ],
     declarations:
     [
     Tab2Page,
-   
+            ExpansionStylingPage
     ]
 })
 export class Tab2PageModule {}

@@ -3,12 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { Tab2Page } from './tab2.page';
 
 
+
 const routes: Routes = [
     {
-        path: 'Tab2',
-        component: Tab2Page
+        path: '',
+        component: Tab2Page,
 
-    }
+    },
+  {
+    path: 'expansion-styling',
+    loadChildren: () => import('./expansion-styling/expansion-styling.module').then( m => m.ExpansionStylingPageModule)
+  }
+
 ];
             
 @NgModule({
