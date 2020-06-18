@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms'; // added for the suggestion form
+import { AlertController } from '@ionic/angular'; // added for the confirmation of the form being sent
 import { type } from 'os';
 
 @Component({
@@ -9,23 +10,37 @@ import { type } from 'os';
 })
 export class Tab3Page {
 
-  constructor() {}
+  constructor(public alertController: AlertController) {}
+
+  async alertFormSent() {
+    const alert = await this.alertController.create({
+      header: 'Sent successfully',
+      message: 'Thank you!',
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
 
   sendForm(form: NgForm) {
     if (!form.valid) {
       return;
     }
     else {
+      this.alertFormSent();
+
+      // gets the information from the form
       const placename = form.value.placename;
       const placetype = form.value.placetype;
-      const address = form.value.address;
+      const street = form.value.street;
       const city = form.value.city;
       const state = form.value.state;
       const zipcode = form.value.zipcode;
       const comments = form.value.comments;
 
       // test to make sure the program is getting the correct information
-      console.log(placename, placetype, address, city, state, zipcode, comments);
+      console.log(placename, placetype, street, city, state, zipcode, comments);
+
+      form.resetForm();
     }
   }
 }
