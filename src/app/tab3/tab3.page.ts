@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { type } from 'os';
+
 
 @Component({
   selector: 'app-tab3',
