@@ -13,8 +13,8 @@ export class Tab3Page {
 
   async alertFormSent() {
     const alert = await this.alertController.create({
-      header: 'Sent successfully',
-      message: 'Thank you!',
+      header: 'Sent!',
+      message: 'Your suggestion has been sent successfully. Thank you!',
       buttons: ['OK']
     });
     await alert.present();
