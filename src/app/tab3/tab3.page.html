@@ -18,9 +18,9 @@
   <form #suggestion="ngForm" (ngSubmit)="sendForm(suggestion)">
     <ion-grid>
       <ion-row>
-        <ion-col size-md="10" offset-md="1">
-          <ion-list lines="full" class="ion-padding">
-            <ion-item padding>
+        <ion-col size-sm="10" offset-sm="1" size-lg="6" offset-lg="3">
+          <ion-list lines="full">
+            <ion-item>
               <p>Do you have a place you want us to test next? Let us know!</p>
             </ion-item>
       
@@ -55,8 +55,8 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size-md="4" offset-md="4">
-          <div class="ion-padding-horizontal ion-padding-bottom">
+        <ion-col size-sm="4" offset-sm="4" size-lg="2" offset-lg="5">
+          <div class="ion-padding-horizontal">
             <ion-button expand="block" type="submit" [disabled]="!suggestion.valid">Submit</ion-button>
           </div>
         </ion-col>
