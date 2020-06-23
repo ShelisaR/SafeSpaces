@@ -13,11 +13,10 @@ const routes: Routes = [
     path: 'educationaresources',
     loadChildren: () => import('./educationaresources/educationaresources.module').then( m => m.EducationaresourcesPageModule)
   },
- 
-  {
-    path: 'covid19tracker',
-    loadChildren: () => import('./covid19tracker/covid19tracker.module').then( m => m.Covid19trackerPageModule)
-  }
+    {
+        path: 'covid19tracker',
+        loadChildren: () => import('./covid19tracker/covid19tracker.module').then(m => m.Covid19trackerPageModule)
+    },
 
     ]
             
