@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ExpansionStylingPage } from './expansion-styling.page';
+import { Covid19trackerPage } from './covid19tracker.page';
 
 const routes: Routes = [
   {
-    path: 'id',
-    component: ExpansionStylingPage
+    path: '',
+    component: Covid19trackerPage
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ExpansionStylingPageRoutingModule {}
+export class Covid19trackerPageRoutingModule {}
