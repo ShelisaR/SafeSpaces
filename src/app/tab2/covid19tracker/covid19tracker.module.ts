@@ -12,9 +12,14 @@ import { Covid19trackerPage } from './covid19tracker.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    Covid19trackerPageRoutingModule
+        IonicModule,
+       
+        Covid19trackerPageRoutingModule
+
+
   ],
-  declarations: [Covid19trackerPage]
+    declarations: [Covid19trackerPage],
+    
+    exports: [Covid19trackerPage]
 })
 export class Covid19trackerPageModule {}

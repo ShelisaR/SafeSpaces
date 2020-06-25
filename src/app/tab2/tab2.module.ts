@@ -7,15 +7,13 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 
+import { AppService } from './appservice';
 
-import {
-    IgxIconModule,
-    IgxButtonModule,
-    IgxExpansionPanelModule,
-    IgxCarouselModule ,
-    IgxInputGroupModule,
-    IgxTabsModule
-} from "igniteui-angular";
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
 
 
 
@@ -27,14 +25,10 @@ import {
     FormsModule,
     ExploreContainerComponentModule,
         Tab2PageRoutingModule,
-        IgxIconModule,
-        IgxButtonModule,
-        IgxExpansionPanelModule,
-        IgxCarouselModule,
-        IgxTabsModule,
-
-        IgxInputGroupModule
+        HttpClientModule
+        
   ],
-    declarations:[Tab2Page]
+    declarations: [Tab2Page],
+     providers:[AppService]
 })
 export class Tab2PageModule {}
