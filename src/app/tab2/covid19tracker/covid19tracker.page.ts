@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  } from '@angular/core';
 import { AppService } from '../appservice';
 
 import { LoadingController } from '@ionic/angular';
@@ -8,7 +8,7 @@ import { LoadingController } from '@ionic/angular';
   templateUrl: './covid19tracker.page.html',
   styleUrls: ['./covid19tracker.page.scss'],
 })
-export class Covid19trackerPage implements OnInit {
+export class Covid19trackerPage {
 
     countries: any;
 
@@ -17,9 +17,7 @@ export class Covid19trackerPage implements OnInit {
     constructor(private appService: AppService,
 
         public loadingController: LoadingController) { }
-    ngOnInit(): void {
-        throw new Error("Method not implemented.");
-    }
+ 
 
 
 
