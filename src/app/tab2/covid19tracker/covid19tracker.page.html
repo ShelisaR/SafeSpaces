@@ -1,7 +1,7 @@
 <ion-header [translucent]="false">
 
     <ion-toolbar>
-        <ion-buttons slot="start">
+        <ion-buttons  slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-title>
@@ -39,7 +39,7 @@
                     <tr>
 
                         <td colspan="2">
-                            Total Cases : <ion-text color="secondary">{{country?.TotalConfirmed | number}}</ion-text>
+                            Total Cases : <ion-text color="">{{country?.TotalConfirmed | number}}</ion-text>
 
                         </td>
 
@@ -71,7 +71,7 @@
                     <tr>
 
                         <td colspan="2">
-                            Total Deaths : <ion-text color="secondary">{{country?.TotalDeaths | number}}</ion-text>
+                            Total Deaths : <ion-text color="danger">{{country?.TotalDeaths | number}}</ion-text>
 
                         </td>
 
