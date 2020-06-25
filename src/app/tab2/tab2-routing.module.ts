@@ -17,6 +17,7 @@ const routes: Routes = [
         path: 'covid19tracker',
         loadChildren: () => import('./covid19tracker/covid19tracker.module').then(m => m.Covid19trackerPageModule)
     },
+ 
 
     ]
             

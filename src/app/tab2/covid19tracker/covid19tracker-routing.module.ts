@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { Covid19trackerPage } from './covid19tracker.page';
 
+
 const routes: Routes = [
   {
     path: '',
     component: Covid19trackerPage
-  }
+    },
+
+   
+
 ];
 
 @NgModule({

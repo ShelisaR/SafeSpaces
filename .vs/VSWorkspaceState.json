@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\tab2",
+    "\\src\\app\\tab2\\covid19tracker"
+  ],
+  "SelectedNode": "\\src\\app\\tab2\\covid19tracker\\covid19tracker-routing.module.ts",
+  "PreviewInSolutionExplorer": false
+}
