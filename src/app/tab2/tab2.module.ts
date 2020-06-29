@@ -5,8 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-
 import { Tab2PageRoutingModule } from './tab2-routing.module';
+
+import { AppService } from './appservice';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
+
+
+
 
 @NgModule({
   imports: [
@@ -15,12 +25,10 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
         Tab2PageRoutingModule,
-   
+        HttpClientModule
+        
   ],
-    declarations:
-    [
-    Tab2Page,
-   
-    ]
+    declarations: [Tab2Page],
+     providers:[AppService]
 })
 export class Tab2PageModule {}

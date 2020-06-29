@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\tab1",
-    "\\src\\theme"
+    "\\src\\app\\tab2",
+    "\\src\\app\\tabs",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\app-routing.module.ts",
+  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
   "PreviewInSolutionExplorer": false
 }

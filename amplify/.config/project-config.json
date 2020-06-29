@@ -1,0 +1,17 @@
+{
+    "projectName": "SafeSpaces",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "ionic",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "www.IonicFramework.com",
+            "BuildCommand": "npm",
+            "StartCommand": "ionic serve"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
+}

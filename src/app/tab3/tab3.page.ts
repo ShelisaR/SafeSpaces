@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms'; // for the suggestion form
-import { AlertController } from '@ionic/angular'; // for the confirmation of the form being sent
+import { ToastController } from '@ionic/angular'; // for the confirmation of the form being sent
 
 @Component({
   selector: 'app-tab3',
@@ -9,15 +9,14 @@ import { AlertController } from '@ionic/angular'; // for the confirmation of the
 })
 export class Tab3Page {
 
-  constructor(public alertController: AlertController) {}
+  constructor(public toastController: ToastController) {}
 
   async alertFormSent() {
-    const alert = await this.alertController.create({
-      header: 'Sent!',
-      message: 'Your suggestion has been sent successfully. Thank you!',
-      buttons: ['OK']
+    const toast = await this.toastController.create({
+      message: 'Your suggestion has been sent. Thank you!',
+      duration: 2000
     });
-    await alert.present();
+    toast.present();
   }
 
   sendForm(form: NgForm) {

@@ -1,0 +1,15 @@
+projects:
+  SafeSpaces:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/Safespaces.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: src/APIService.ts
+        docsFilePath: src/graphql
+        region: us-east-1
+        apiId: zk5xbih52zft3k6p5iblsgndfq
+        maxDepth: 2

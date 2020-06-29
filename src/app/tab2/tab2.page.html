@@ -1,11 +1,49 @@
- 
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Education
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm size-lg="4.75" offset-lg="1">
+          <ion-card button="true" a [routerLink]="'./educationaresources'">
+            <ion-card-header>
+                <img src="https://www.stockvault.net/data/2011/10/11/127466/preview16.jpg">
+                <ion-card-title>Learn More</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                Read about commonly found household bacteria and viruses.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
 
-<ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Tab 2</ion-title>
-        </ion-toolbar>
-    </ion-header>
+        <ion-col size="12" size-sm size-lg="4.75" offset-lg=".5">
+          <ion-card button="true" a [routerLink]="'./covid19tracker'">
+            <ion-card-header>
+                <img src="https://www.stockvault.net/data/2020/06/02/275954/preview16.jpg">
+                <ion-card-title>Coronavirus Tracker</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                See the latest COVID-19 data around the world in real time.
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-    <app-explore-container name="Tab 2 page"></app-explore-container>
+    <!-- <ul class="nav nav-tabs">
+      <li role="presentation" routerLinkActive="active">
+          <a routerLink="/">Dashboard</a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+          <a [routerLink]="'./educationaresources'">Education Resources</a>
+      </li>
+      <li role="presentation" routerLinkActive="active">
+          <a [routerLink]="'./covid19tracker'">Covid19Tracker</a>
+      </li>
+    </ul> -->
 </ion-content>
