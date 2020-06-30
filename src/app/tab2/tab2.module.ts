@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+
+
 @NgModule({
   imports: [
     IonicModule,
@@ -25,8 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ExploreContainerComponentModule,
         Tab2PageRoutingModule,
-        HttpClientModule
-        
+        HttpClientModule,
+      
   ],
     declarations: [Tab2Page],
      providers:[AppService]
