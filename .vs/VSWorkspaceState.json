@@ -4,8 +4,9 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\tab2",
-    "\\src\\app\\tab2\\covid19tracker"
+    "\\src\\app\\tabs",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\covid19tracker\\covid19tracker-routing.module.ts",
+  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
   "PreviewInSolutionExplorer": false
 }
