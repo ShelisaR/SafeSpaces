@@ -3,10 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\tab1",
     "\\src\\app\\tab2",
-    "\\src\\app\\tabs",
-    "\\src\\assets"
+    "\\src\\app\\tab3",
+    "\\src\\assets",
+    "\\src\\assets\\images"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
+  "SelectedNode": "\\src\\app\\tab3\\tab3.page.html",
   "PreviewInSolutionExplorer": false
 }
