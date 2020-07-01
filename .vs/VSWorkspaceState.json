@@ -1,12 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\amplify",
+    "\\e2e\\src",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\explore-container",
     "\\src\\app\\tab2",
-    "\\src\\app\\tabs",
-    "\\src\\assets"
+    "\\src\\app\\tab2\\covid19tracker",
+    "\\src\\assets",
+    "\\src\\assets\\images"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }
