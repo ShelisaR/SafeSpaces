@@ -5,12 +5,10 @@
     "\\e2e\\src",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\explore-container",
     "\\src\\app\\tab2",
-    "\\src\\app\\tab2\\covid19tracker",
-    "\\src\\assets",
-    "\\src\\assets\\images"
+    "\\src\\app\\tabs",
+    "\\src\\assets"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
   "PreviewInSolutionExplorer": false
 }
