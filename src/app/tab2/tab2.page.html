@@ -6,33 +6,56 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+<ion-content>
     <ion-grid>
-      <ion-row>
-        <ion-col size="12" size-sm size-lg="4.75" offset-lg="1">
-          <ion-card button="true" a [routerLink]="'./educationaresources'">
-            <ion-card-header>
-                <img src="assets/images/bacteria.jpg">
-                <ion-card-title>Learn More</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-                Read about commonly found household bacteria and viruses.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
+        <ion-row>
 
-        <ion-col size="12" size-sm size-lg="4.75" offset-lg=".5">
-          <ion-card button="true" a [routerLink]="'./covid19tracker'">
-            <ion-card-header>
-                <img src="assets/images/covid blue.jpg">
-                <ion-card-title>Coronavirus Tracker</ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-                See the latest COVID-19 data around the world in real time.
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
+            <ion-col size="12" size-sm size-lg="4.75" offset-lg=".5">
+                <ion-card button="true" a [routerLink]="'./covid19tracker'">
+                    <ion-card-header>
+                        <img src="assets/images/covid blue.jpg">
+                        <ion-card-title>Coronavirus Tracker</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        See the latest COVID-19 data around the world in real time.
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12" size-sm size-lg="4.75" offset-lg="1">
+                <ion-card button="true" a [routerLink]="'./educationaresources'">
+                    <ion-card-header>
+                        <img src="assets/images/bacteria.jpg">
+                        <ion-card-title>BACTERIA 1 </ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                     CARD FOR BACTERIA 1
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+
+            <ion-col size="12" size-sm size-lg="4.75" offset-lg=".5">
+                <ion-card button="true" a [routerLink]="'./bacteria2'">
+                    <ion-card-header>
+                        <img src="assets/images/covid blue.jpg">
+                        <ion-card-title>BACTERIA2</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                      CARD FOR BACTERIA 2
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12" size-sm size-lg="4.75" offset-lg=".5">
+                <ion-card button="true" a [routerLink]="'./bacteria3'">
+                    <ion-card-header>
+                        <img src="assets/images/covid blue.jpg">
+                        <ion-card-title>BACTERIA3</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content>
+                        CARD FOR BACTERIA 3
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
     </ion-grid>
 
     <!-- <ul class="nav nav-tabs">
@@ -44,6 +67,12 @@
       </li>
       <li role="presentation" routerLinkActive="active">
           <a [routerLink]="'./covid19tracker'">Covid19Tracker</a>
+      </li>
+        <li role="presentation" routerLinkActive="active">
+          <a [routerLink]="'./bacteria3'">Bacteria3</a>
+      </li>
+        <li role="presentation" routerLinkActive="active">
+          <a [routerLink]="'./bacteria2'">Bacteria2</a>
       </li>
     </ul> -->
 </ion-content>
