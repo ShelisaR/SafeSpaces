@@ -11,16 +11,32 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AgmCoreModule } from '@agm/core';
+export const firebase = environment.firebase;
+
+
+
 
 @NgModule({
 	declarations: [AppComponent],
 	entryComponents: [],
-	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule,
+
+		AngularFireModule.initializeApp(firebase),
+		AgmCoreModule.forRoot({
+			apiKey: environment.googleMapsKey
+
+        })
+
+	],
 
 	
 	providers: [
 		StatusBar,
 		SplashScreen,
+
 		
 		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 	],

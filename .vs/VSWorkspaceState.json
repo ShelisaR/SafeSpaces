@@ -5,11 +5,10 @@
     "\\src\\app",
     "\\src\\app\\tab1",
     "\\src\\app\\tab2",
-    "\\src\\app\\tab2\\bacteria3",
-    "\\src\\app\\tab2\\educationaresources",
-    "\\src\\app\\tab3",
-    "\\src\\assets"
+    "\\src\\assets",
+    "\\src\\environments",
+    "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
+  "SelectedNode": "\\src\\environments\\environment.ts",
   "PreviewInSolutionExplorer": false
 }
