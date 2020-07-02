@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
   
-
+    lat = 40.730610;
+    lng = -73.935242;
 
   constructor() {}
 
