@@ -1,15 +1,56 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms'; // for the suggestion form
-import { ToastController } from '@ionic/angular'; // for the confirmation of the form being sent
+import { AngularFireDatabase } from '@angular/fire/database';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page{
+  
+  // creates variables
+  itemName = '';
+  itemType = '';
+  itemStreet = '';
+  itemCity = '';
+  itemState = '';
+  itemZipCode = '';
+  itemComments = '';
+  items: Observable<any[]>;
+  suggestionForm: FormGroup;
 
-  constructor(public toastController: ToastController) {}
+  // sets the database
+  constructor(private fb: FormBuilder, private db: AngularFireDatabase, public toastController: ToastController) {
+    this.items = db.list('suggestions').valueChanges()
+
+    // validation
+    this.suggestionForm = fb.group({
+      suggestionFormName: ['', Validators.required],
+      suggestionFormType: ['', Validators.required],
+      suggestionFormStreet: ['', Validators.required],
+      suggestionFormCity: ['', Validators.required],
+      suggestionFormState: ['', Validators.required],
+      suggestionFormZipCode: ['', Validators.required],
+      suggestionFormComments: ['']
+    });
+  }
+
+  // pushes the form to the database
+  onSubmit() {
+    this.db.list('/suggestions').push({
+      name: this.itemName,
+      type: this.itemType,
+      street: this.itemStreet,
+      city: this.itemCity,
+      state: this.itemState,
+      zipcode: this.itemZipCode,
+      comments: this.itemComments});
+  
+    this.alertFormSent()
+  }
 
   async alertFormSent() {
     const toast = await this.toastController.create({
@@ -19,26 +60,7 @@ export class Tab3Page {
     toast.present();
   }
 
-  sendForm(form: NgForm) {
-    if (!form.valid) {
-      return;
-    }
-    else {
-      this.alertFormSent();
-
-      // gets the information from the form
-      const placename = form.value.placename;
-      const placetype = form.value.placetype;
-      const street = form.value.street;
-      const city = form.value.city;
-      const state = form.value.state;
-      const zipcode = form.value.zipcode;
-      const comments = form.value.comments;
-
-      // test to make sure the program is getting the correct information
-      console.log(placename, placetype, street, city, state, zipcode, comments);
-
-      form.resetForm();
-    }
+  clearForm() {
+    this.suggestionForm.reset();
   }
 }

@@ -9,7 +9,7 @@
 <ion-content>
   <app-explore-container name="Tab 3 page"></app-explore-container>
 
-  <form #suggestion="ngForm" (ngSubmit)="sendForm(suggestion)">
+  <form [formGroup]="suggestionForm">
     <ion-grid>
       <ion-row>
         <ion-col size-sm="10" offset-sm="1" size-lg="6" offset-lg="3">
@@ -20,12 +20,12 @@
       
             <ion-item>
               <ion-label position="floating">Name of Business<ion-text color="danger">*</ion-text></ion-label>
-              <ion-input required type="text" ngModel name="placename"></ion-input>
+              <ion-input type="text" formControlName="suggestionFormName" [(ngModel)]="itemName"></ion-input>
             </ion-item>
       
             <ion-item>
               <ion-label position="floating">Type<ion-text color="danger">*</ion-text></ion-label>
-              <ion-select interface="popover" ngModel name="placetype" required>
+              <ion-select interface="popover" formControlName="suggestionFormType" [(ngModel)]="itemType">
                 <ion-select-option value="restaurant">Restaurant</ion-select-option>
                 <ion-select-option value="grocerystore">Grocery Store</ion-select-option>
                 <ion-select-option value="pharmacy">Pharmacy</ion-select-option>
@@ -36,15 +36,15 @@
       
             <ion-item>
               <ion-label position="stacked">Address<ion-text color="danger">*</ion-text></ion-label>
-              <ion-input placeholder="Street" required ngModel name="street"></ion-input>
-              <ion-input placeholder="City" required ngModel name ="city"></ion-input>
-              <ion-input placeholder="State" required ngModel name="state"></ion-input>
-              <ion-input placeholder="Zip Code" required type="number" ngModel name="zipcode"></ion-input>
+              <ion-input placeholder="Street" formControlName="suggestionFormStreet" [(ngModel)]="itemStreet"></ion-input>
+              <ion-input placeholder="City" formControlName="suggestionFormCity" [(ngModel)]="itemCity"></ion-input>
+              <ion-input placeholder="State" formControlName="suggestionFormState" [(ngModel)]="itemState"></ion-input>
+              <ion-input placeholder="Zip Code" type="number" formControlName="suggestionFormZipCode" [(ngModel)]="itemZipCode"></ion-input>
             </ion-item>
       
             <ion-item>
               <ion-label position="stacked">Comments</ion-label>
-              <ion-textarea placeholder="Optional" rows="3" ngModel name="comments"></ion-textarea>
+              <ion-textarea placeholder="Optional" rows="3" formControlName="suggestionFormComments" [(ngModel)]="itemComments"></ion-textarea>
             </ion-item>
           </ion-list>
         </ion-col>
@@ -53,7 +53,7 @@
       <ion-row>
         <ion-col size-sm="4" offset-sm="4" size-lg="2" offset-lg="5">
           <div class="ion-padding-horizontal">
-            <ion-button expand="block" type="submit" [disabled]="!suggestion.valid">Send</ion-button>
+            <ion-button expand="block" type="submit" [disabled]="suggestionForm.invalid" (click)="onSubmit()" (click)="clearForm()">Send</ion-button>
           </div>
         </ion-col>
       </ion-row>
