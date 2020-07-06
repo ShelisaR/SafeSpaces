@@ -22,10 +22,13 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
         
         Tab1PageRoutingModule,
 
-        AngularFireModule.initializeApp(firebase),
-        AgmCoreModule.forRoot({
-            apiKey: environment.googleMapsKey
+        AngularFireModule.initializeApp({
+            apiKey: "AIzaSyAD-t3ZreMDT4Xj-QHe-1iXCaeJK8gfsj4",
+            databaseURL: "https://safespaces-9dada.firebaseio.com",
+        }),
 
+            AgmCoreModule.forRoot({
+                apiKey: 'AIzaSyDNo7Wd35fI0npchlKTu2m1mkSrhVLWMtU'
         })
     
   ],

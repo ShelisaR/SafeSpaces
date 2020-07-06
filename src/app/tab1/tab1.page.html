@@ -1,15 +1,17 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title>
-            SafeSpaces
-        </ion-title>
-    </ion-toolbar>
-</ion-header>
+<div *ngIf =" lat && lng"></div>
 
-<ion-content>
-    <agm-map [latitude]="lat" [longitude]="lng">
-        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-    </agm-map>
-</ion-content>
+    <ion-content>
+        <div *ngIf=" lat && lng"></div>
+        
+        <agm-map [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng">
+                <agm-info-window>
+                    <p>
+                        Hey
+                    </p>
+                </agm-info-window>
+            </agm-marker>
+        </agm-map>
+    </ion-content>
 
 

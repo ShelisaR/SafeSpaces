@@ -1,18 +1,34 @@
 import { Component } from '@angular/core';
 
 
+
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+    selector: 'app-tab1',
+    templateUrl: 'tab1.page.html',
+    styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  
-    lat = 40.730610;
-    lng = -73.935242;
 
-  constructor() {}
+    lat: number;
+    lng: number;
+
+    constructor() { }
+    ngOnInit() {
+        this.getUserLocation()
+
+    }
+
+    private getUserLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                this.lat = position.coords.latitude;
+                this.lng = position.coords.longitude;
+            });
+
+        }
+
+
+
+    }
 
 }
-
-
