@@ -9,7 +9,7 @@ import { ToastController } from '@ionic/angular';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page{
+export class Tab3Page {
   
   // creates variables
   itemName = '';
