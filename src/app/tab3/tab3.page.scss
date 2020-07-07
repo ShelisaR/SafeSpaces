@@ -1,3 +1,30 @@
-ion-list {
-    border-radius: 5px;
+ion-item {
+    --background: #f6f6f6;
+    border-style: solid;
+    border-radius: 0px;
+    border-left-width: 0px;
+    border-bottom-width: 4px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    border-color: #dadada;
+    margin: 25px 10px;
+}
+
+ion-input {
+    font-family: 'Cantarell', 'Arial', sans-serif;
+}
+
+ion-textarea {
+    font-family: 'Cantarell', 'Arial', sans-serif;
+}
+
+p {
+    margin: 25px 10px;
+    font-family: 'Cantarell', 'Arial', sans-serif;
+    font-size: 22px;
+    text-align: center;
+}
+
+.label {
+    font-family: 'Cantarell', 'Arial', sans-serif;
 }
