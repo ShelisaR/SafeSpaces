@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PlacesService } from './places.service';
 
 
 
@@ -9,26 +10,6 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-    lat: number;
-    lng: number;
-
-    constructor() { }
-    ngOnInit() {
-        this.getUserLocation()
-
-    }
-
-    private getUserLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(position => {
-                this.lat = position.coords.latitude;
-                this.lng = position.coords.longitude;
-            });
-
-        }
-
-
-
-    }
-
+    constructor(private placesService: PlacesService) { }
+    places$ = this.placesService.places$;
 }

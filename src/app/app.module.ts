@@ -16,7 +16,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AgmCoreModule } from '@agm/core';
-export const firebase = environment.firebase;
+import { firebaseConfig } from './tab1/tab1.module';
+export const firebase = environment.firebaseConfig;
 
 
 
@@ -26,7 +27,7 @@ export const firebase = environment.firebase;
 	entryComponents: [],
 	imports: [BrowserModule, ReactiveFormsModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, BrowserAnimationsModule,
 
-		AngularFireModule.initializeApp(firebase),
+		AngularFireModule.initializeApp(firebaseConfig),
 		AngularFireDatabaseModule,
 		AgmCoreModule.forRoot({
 			apiKey: environment.googleMapsKey

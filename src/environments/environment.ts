@@ -4,9 +4,9 @@
 
 
 export const environment = {
-    production: true,
+    production: false,
 
-    firebase: {
+    firebaseConfig: {
         apiKey: "AIzaSyAD-t3ZreMDT4Xj-QHe-1iXCaeJK8gfsj4",
         authDomain: "safespaces-9dada.firebaseapp.com",
         databaseURL: "https://safespaces-9dada.firebaseio.com",

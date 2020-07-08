@@ -1,17 +1,11 @@
-<div *ngIf =" lat && lng"></div>
-
-    <ion-content>
-        <div *ngIf=" lat && lng"></div>
-        
-        <agm-map [latitude]="lat" [longitude]="lng">
-            <agm-marker [latitude]="lat" [longitude]="lng">
-                <agm-info-window>
-                    <p>
-                        Hey
-                    </p>
-                </agm-info-window>
-            </agm-marker>
-        </agm-map>
-    </ion-content>
-
-
+<div class="places">
+    <app-places-form></app-places-form>
+    <div class="columns" *ngIf="places$ | async as places">
+        <div class="places-list">
+            <app-places-list [places]="places"></app-places-list>
+        </div>
+        <div class="map">
+            <app-places-map [places]="places"></app-places-map>
+        </div>
+    </div>
+</div>

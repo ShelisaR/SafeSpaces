@@ -1,0 +1,26 @@
+<div class="places">
+    <div class="map">
+        <agm-map [latitude]="lat" [longitude]="lng" >
+            <agm-marker  [latitude]="lat" [longitude]="lng">
+                <agm-marker *ngFor="let p of places"
+                            [latitude]="p.lat"
+                            [longitude]="p.long">
+                    <agm-info-window>
+                        <p>{{p.name}}</p>
+                        <p>{{p.des}}</p>
+                        <p>{{p.address}}</p>
+                       
+
+
+
+
+                    </agm-info-window>
+                    
+                </agm-marker>
+                <agm-info-window>
+                    <p>You are Here</p>
+                </agm-info-window>
+            </agm-marker>
+        </agm-map>
+    </div>
+</div>
