@@ -1,14 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\amplify",
-    "\\e2e\\src",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\tab1",
     "\\src\\app\\tab2",
-    "\\src\\app\\tabs",
-    "\\src\\assets"
+    "\\src\\app\\tab3",
+    "\\src\\assets",
+    "\\src\\environments",
+    "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\app\\tab2\\tab2.module.ts",
+  "SelectedNode": "\\src\\app\\tab1\\tab1.module.ts",
   "PreviewInSolutionExplorer": false
 }

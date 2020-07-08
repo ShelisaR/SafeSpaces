@@ -1,82 +1,11 @@
-<ion-header [translucent]="true">
-    <ion-toolbar>
-        <ion-title>
-            SafeSpaces
-        </ion-title>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
-    <ion-card>
-       <ion-card-content>
-           <b>Search your favorite resturants , businesses , arcades , churches , schools , homes and universities </b>
-        </ion-card-content>
-    </ion-card>
-    <!-- Searchbar with a cancel button and custom cancel button text -->
-    <ion-searchbar showCancelButton="focus" cancelButtonText="Custom Cancel"></ion-searchbar>
-   
-
-    <ion-card>
-        <ion-item>
-            <ion-icon name="pin" slot="start"></ion-icon>
-            <ion-label>Mcdonalds</ion-label>
-        </ion-item>
-        <ion-card-content>
-            Address:  12387 Plank Rd, Baton Rouge, LA 70811
-            <br />City: Baker
-            <br />State: Louisana
-            <br />Zip Code: 70714
-            <br /> Type of Business:Fast Food Resturant
-            <br />Area within Location:table in resturant
-            <br />Time and timezone: 5:00 CST
-            <br /> Date: 6/18/20
-            <br /> Bacteria Found: E.Colli
-            <br /> Lifespan: few hours to a day, once it becomes a virus then its lifespan is days to weeks
-            <br>Level of Harmness:High
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-item>
-            <ion-icon name="pin" slot="start"></ion-icon>
-            <ion-label>Murphy USA</ion-label>
-        </ion-item>
-        <ion-card-content>
-            Address: 14503 Plank Rd, Baker, LA 70714
-            <br />City: Baker
-            <br />State: Louisana
-            <br />Zip Code: 70714
-            <br /> Type of Business: Gas Station
-            <br />Time and timezone: 4:00 EST
-            <br /> Date: 6/15/20
-            <br /> Bacteria Found: Staphylococcus Species
-            <br /> Lifespan: 24hrs or more
-            <br />Level of Harmness:Medium
-        </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-        <ion-item>
-            <ion-icon name="pin" slot="start"></ion-icon>
-            <ion-label>Walmart</ion-label>
-        </ion-item>
-        <ion-card-content>
-            Address:1801 Howell Mill Rd NW, Atlanta, GA 30318
-            <br />City: Atlanta
-            <br />State: Georgia
-            <br />Zip Code: 30318
-            <br /> Type of Business:Grocery
-            <br />Time and timezone: 4:00 CST
-            <br /> Date: 6/15/20
-            <br /> Bacteria Found: Streptococcus
-            <br /> Lifespan: Survives on a dry surface for 3 days to 6.5 months
-            <br />Level of Harmness:Medium
-        </ion-card-content>
-    </ion-card>
+<div class="places">
+    <app-places-form></app-places-form>
+    <div class="columns" *ngIf="places$ | async as places">
+        <div class="places-list">
+            <app-places-list [places]="places"></app-places-list>
+        </div>
+        <div class="map">
+            <app-places-map [places]="places"></app-places-map>
+        </div>
+    </div>
+</div>

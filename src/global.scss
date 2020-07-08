@@ -25,4 +25,24 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+ion-toolbar {
+    --color: #868f9e;
+    font-family: 'Oswald', 'Arial', sans-serif;
+    text-transform: uppercase;
+}
 
+ion-button {
+    font-family: 'Cantarell', 'Arial', sans-serif;
+}
+
+ion-card {
+    font-family: 'Cantarell', 'Arial', sans-serif;
+}
+
+ion-back-button {
+    font-family: 'Cantarell', 'Arial', sans-serif;
+}
+
+ion-slides {
+    height: 100%;
+}

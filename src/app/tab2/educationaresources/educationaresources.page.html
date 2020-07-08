@@ -1,101 +1,67 @@
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Educational Resources</ion-card-title>
-  </ion-card-header>
-    <ion-card-content>
-    Here you will learn about the different bacteria we are testing for!
-    </ion-card-content>
-</ion-card>
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>E. Coli</ion-title>
+    </ion-toolbar>
+</ion-header>
 
-<ion-card>
-  <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>Escherichia Coli (E.coli)</ion-label>
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>General Information</ion-card-title>
+                </ion-card-header>
 
-    <ion-button fill="outline" slot="end">View</ion-button>
-  </ion-item>
+                <ion-card-content>
+                    Escherichia coli (E. coli) bacteria normally live in 
+                    the intestines of people and animals. Most E. coli 
+                    are harmless and actually are an important part of a 
+                    healthy human intestinal tract. However, some E. coli 
+                    are pathogenic, meaning they can cause illness, either 
+                    diarrhea or illness outside of the intestinal tract. 
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Spread and Prevention</ion-card-title>
+                </ion-card-header>
 
-  <ion-card-content>
-    Effects of Bacteria: Pneumonia, Urinary Tract Infections, and Diarrhea
-    </ion-card-content>
-    <ion-card-content>
-
-    Spread of Bacteria: Raw meat, uncleaned materials, unclean hands after using the restroom or changing of diaper
-    </ion-card-content>
-<ion-card-content>
-    How long does it survive?: E.coli lifespan is a few hours to a day, once it becomes a virus then its lifespan is days to weeks
-  </ion-card-content>
-  <ion-card-content>
-    Prevention Methods: Washing hands, and cooking food properly
-    </ion-card-content>
-</ion-card>
-
-<ion-card>
-  <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>Staphylococcus Species</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
-  </ion-item>
-
-  <ion-card-content>
-    Effects of Bacteria: Strep Throat,Scarlet Fever,Impetigo,Cellulitis, Streptococcal Toxic Shock Syndrome
-</ion-card-content>
-    <ion-card-content>
-
-    Spread of Bacteria: Direct contact with nose and throat discharge
-    </ion-card-content>
-<ion-card-content>
-    How long does it survive?: Survives on a dry surface for 3 days to 6.5 months
-  </ion-card-content>
-  <ion-card-content>
-    Prevention Methods: Washing hands, and practicing good hygiene methods
-    </ion-card-content>
-</ion-card>
-
-<ion-card>
-  <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>Staphylococcus Species</ion-label>
-
-    <ion-button fill="outline" slot="end">View</ion-button>
-  </ion-item>
-
-  <ion-card-content>
-    Effects of Bacteria: Skin rash, infected organs, heart valve infections, bone infections (life time span)
-
-    </ion-card-content>
-    <ion-card-content>
-
-    Spread of Bacteria: Direct contact with an infected person and/or object
-    </ion-card-content>
-<ion-card-content>
-    How long does it survive?: 24hrs or more
-    </ion-card-content>
-  <ion-card-content>
-    Prevention Methods: Washing hands, practicing good hygiene,keeping cuts and straps clean away from others
-  </ion-card-content>
-</ion-card>
-
-
-<ion-card>
-  <ion-item href="#" class="ion-activated">
-    <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>BACK TO DASHBOARD</ion-label>
-  </ion-item>
-
-  <ion-item href="#">
-    <ion-icon name="wine" slot="start"></ion-icon>
-    <ion-label>Card Link Item 2</ion-label>
-  </ion-item>
-
-  <ion-item class="ion-activated">
-    <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 activated</ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon name="walk" slot="start"></ion-icon>
-    <ion-label>Card Button Item 2</ion-label>
-  </ion-item>
-</ion-card>
+                <ion-card-content>
+                    Washing hands
+                    <br>cooking food properly
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Bacteria Effects</ion-card-title>
+                            </ion-card-header>
+            
+                            <ion-card-content>
+                                Pneumonia
+                                <br>Urinary Tract Infections
+                                <br>Diarrhea
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="ion-padding-horizontal">
+                            <ion-button a href="https://www.cdc.gov/ecoli/general/index.html" target="_blank" expand="block">Find Out More</ion-button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

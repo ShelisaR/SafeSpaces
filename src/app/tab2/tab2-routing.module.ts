@@ -17,6 +17,14 @@ const routes: Routes = [
         path: 'covid19tracker',
         loadChildren: () => import('./covid19tracker/covid19tracker.module').then(m => m.Covid19trackerPageModule)
     },
+  {
+    path: 'bacteria2',
+    loadChildren: () => import('./bacteria2/bacteria2.module').then( m => m.Bacteria2PageModule)
+  },
+  {
+    path: 'bacteria3',
+    loadChildren: () => import('./bacteria3/bacteria3.module').then( m => m.Bacteria3PageModule)
+  },
  
 
     ]

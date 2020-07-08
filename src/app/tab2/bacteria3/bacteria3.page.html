@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Streptococcus</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>General Information</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    Bacteria called group A Streptococcus (group A strep) 
+                    can cause many different infections. Some of these 
+                    are common, relatively minor infections, like strep 
+                    throat. Others are less common, but very serious and 
+                    even deadly. People can easily spread group A strep 
+                    to other people. Practicing good hygiene, like 
+                    washing your hands often, is the best way to protect 
+                    yourself from group A strep infections. 
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Spread and Prevention</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    Direct contact with nose and throat discharge
+                    <br>Practicing good hygiene methods
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Bacteria Effects</ion-card-title>
+                            </ion-card-header>
+            
+                            <ion-card-content>
+                                Strep Throat
+                                <br>Scarlet Fever
+                                <br>Impetigo
+                                <br>Cellulitis
+                                <br>Streptococcal Toxic Shock Syndrome
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="ion-padding-horizontal">
+                            <ion-button a href="https://www.cdc.gov/groupastrep/index.html" target="_blank" expand="block">Find Out More</ion-button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
+</ion-content>

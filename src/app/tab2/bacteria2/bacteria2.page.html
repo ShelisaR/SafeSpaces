@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar color="dark">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Staphylococcus</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>General Information</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    Staphylococcus aureus (staph) is a germ found on people’s 
+                    skin. Staph can cause serious infections if it gets into 
+                    the blood and can lead to sepsis or death.  People are at 
+                    higher risk for staph infection when they have surgery or 
+                    stay in healthcare facilities, have medical devices in 
+                    their body, inject drugs, or when they come in close 
+                    contact with someone who has staph. 
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Spread and Prevention</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    Direct contact with an infected person and object
+                    <br>Practicing good hygiene
+                    <br>Keeping cuts and straps clean away from others
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Bacteria Effects</ion-card-title>
+                            </ion-card-header>
+            
+                            <ion-card-content>
+                                Skin Rash
+                                <br>Infect organs
+                                <br>Heart valve infections
+                                <br>Bone infections
+                                <br>Life time span
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="ion-padding-horizontal">
+                            <ion-button a href="https://www.cdc.gov/vitalsigns/staph/index.html" target="_blank" expand="block">Find Out More</ion-button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
+</ion-content>
