@@ -13,12 +13,12 @@
         <ion-col size-sm="10" offset-sm="1" size-lg="6" offset-lg="3">
           <ion-list lines="full">
             <p>Do you have a place you want us to test next? Let us know!</p>
-            <ion-item>
+            <ion-item color="light">
               <ion-label position="floating" class="label">Name of Business*</ion-label>
               <ion-input type="text" formControlName="suggestionFormName" [(ngModel)]="itemName"></ion-input>
             </ion-item>
       
-            <ion-item>
+            <ion-item color="light">
               <ion-label position="floating" class="label">Type*</ion-label>
               <ion-select class="label" interface="popover" formControlName="suggestionFormType" [(ngModel)]="itemType">
                 <ion-select-option value="restaurant">Restaurant</ion-select-option>
@@ -29,7 +29,7 @@
               </ion-select>
             </ion-item>
       
-            <ion-item>
+            <ion-item color="light">
               <ion-label position="stacked" class="label">Address*</ion-label>
               <ion-input placeholder="Street" formControlName="suggestionFormStreet" [(ngModel)]="itemStreet"></ion-input>
               <ion-input placeholder="City" formControlName="suggestionFormCity" [(ngModel)]="itemCity"></ion-input>
@@ -37,7 +37,7 @@
               <ion-input placeholder="Zip Code" type="number" formControlName="suggestionFormZipCode" [(ngModel)]="itemZipCode"></ion-input>
             </ion-item>
       
-            <ion-item>
+            <ion-item color="light">
               <ion-label position="stacked" class="label">Comments</ion-label>
               <ion-textarea placeholder="Optional" rows="3" formControlName="suggestionFormComments" [(ngModel)]="itemComments"></ion-textarea>
             </ion-item>

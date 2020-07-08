@@ -1,11 +1,67 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-title>E. Coli</ion-title>
     </ion-toolbar>
 </ion-header>
-<ion-content>
 
+<ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>General Information</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    Escherichia coli (E. coli) bacteria normally live in 
+                    the intestines of people and animals. Most E. coli 
+                    are harmless and actually are an important part of a 
+                    healthy human intestinal tract. However, some E. coli 
+                    are pathogenic, meaning they can cause illness, either 
+                    diarrhea or illness outside of the intestinal tract. 
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                    <ion-card-title>Spread and Prevention</ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    Washing hands
+                    <br>cooking food properly
+                </ion-card-content>
+            </ion-card>
+        </ion-slide>
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <ion-card>
+                            <ion-card-header>
+                                <ion-card-title>Bacteria Effects</ion-card-title>
+                            </ion-card-header>
+            
+                            <ion-card-content>
+                                Pneumonia
+                                <br>Urinary Tract Infections
+                                <br>Diarrhea
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <div class="ion-padding-horizontal">
+                            <ion-button a href="https://www.cdc.gov/ecoli/general/index.html" target="_blank" expand="block">Find Out More</ion-button>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+    </ion-slides>
 </ion-content>
