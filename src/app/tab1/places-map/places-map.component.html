@@ -1,26 +1,31 @@
 <div class="places">
     <div class="map">
-        <agm-map [latitude]="lat" [longitude]="lng" >
-            <agm-marker  [latitude]="lat" [longitude]="lng">
-                <agm-marker *ngFor="let p of places"
+        <agm-map [latitude]="lat" [longitude]="lng" >         <!--THIS IS THE START OF THE MAP COMPONENT -->      
+
+            <agm-marker  [latitude]="lat" [longitude]="lng">        <!--This gets the latitude and longitude  of the user location and displays  it as a marker. *THIS MARKER IS ONLY FOR THE USER MARKER NOT THE BUILDINGS*-->     
+
+                                                    <!--This marker takes the latitude and longitude of the Building locations. This is the beginning of the buildings information and the locations   -->
+                <agm-marker *ngFor="let p of places"                   
                             [latitude]="p.lat"
                             [longitude]="p.long">
-                    <agm-info-window>
-                        <p>{{p.name}}</p>
-                        <p>{{p.des}}</p>
-                        <p>{{p.address}}</p>
-                       
 
+                    <agm-info-window>               <!--This is the information window that shows the information about the buildings. For example, description, name,and address.  -->
+                                             
+                        <p>{{p.name}}</p>                   <!--name -->
+                        <p>{{p.des}}</p>                    <!--descirption - last checked,any other information-->
+                        <p>{{p.address}}</p>                <!--address-->
 
-
-
-                    </agm-info-window>
+                    </agm-info-window>              <!--This is the end of the information window  -->
                     
-                </agm-marker>
-                <agm-info-window>
-                    <p>You are Here</p>
-                </agm-info-window>
-            </agm-marker>
-        </agm-map>
+                   </agm-marker>             <!--This is the ending of the building location marker.That shows the building information -->
+
+
+                <agm-info-window>       <!--This is the beginning tags to where the info window shows the user where they are located  *USER INFORMATION WINDOW* -->
+                 <p>You are Here</p>     <!--This is going to be a popup window displaying the information. Put infomation into this window to let the user know they are located there-->
+                </agm-info-window>      <!--This is the end of  where the info window goes to show where the user is located-->
+
+            </agm-marker>               <!--THIS IS THE ENDING OF THE USER MARKER-->
+
+        </agm-map>                      <!--THIS IS THE ENDING OF THE MAP COMPONENT --> 
     </div>
 </div>
