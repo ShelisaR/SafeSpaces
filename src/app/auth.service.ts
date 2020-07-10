@@ -1,50 +1,95 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from './users.model';
+
+import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { Observable } from 'rxjs';
-import { auth } from 'firebase';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+@Injectable({ providedIn: 'root' })
 export class AuthService {
-  user: Observable<firebase.User>;
 
-  constructor(private firebaseAuth: AngularFireAuth) { 
-    this.user = firebaseAuth.authState;
-  }
-  signup(email: string, password: string) {
-    this.firebaseAuth
-    .createUserWithEmailAndPassword(email, password)
-    .then(value => {
-      console.log('success', value);
-    })
-    .catch(err => {
-      console.log('fail', err.message);
-    });
-  }
+    user$: Observable<User>;
 
-  login(email: string, password: string) {
-    this.firebaseAuth
-    .signInWithEmailAndPassword(email, password)
-    .then(value => {
-      console.log('it working');
-    })
-    .catch(err => {
-      console.log('fail', err.message);
-    });
-  }
+    constructor(
+        private afAuth: AngularFireAuth,
+        private afs: AngularFirestore,
+        private router: Router
+    ) {
+        // Get the auth state, then fetch the Firestore user document or return null
+        this.user$ = this.afAuth.authState.pipe(
+            switchMap(user => {
+                // Logged in
+                if (user) {
+                    return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+                } else {
+                    // Logged out
+                    return of(null);
+                }
+            })
+        )
+    }
 
-  async loginWithGoogle() {
-    this.firebaseAuth.signInWithPopup(new auth.GoogleAuthProvider())
-    .then(value => {
-      console.log('google works');
-    })
-    .catch(err => {
-      console.log('google fail', err.message);
-    })
-  }
+    async googleSignin() {
+        const provider = new auth.GoogleAuthProvider();
+        const credential = await this.afAuth.signInWithPopup(provider);
+        return this.updateUserData(credential.user);
+    }
 
-  logout() {
-    this.firebaseAuth.signOut();
-  }
+    private updateUserData(user) {
+        // Sets user data to firestore on login
+        const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
+
+        const data = {
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+            isAdmin:user.admin,
+            roles: {
+                subscriber: true
+            }
+        }
+
+        return userRef.set(data, { merge: true })
+
+    }
+
+    async signOut() {
+        await this.afAuth.signOut();
+        this.router.navigate(['/']);
+    }
+    canRead(user: User): boolean {
+        const allowed = ['admin', 'editor', 'subscriber']
+        return this.checkAuthorization(user, allowed)
+    }
+
+    canEdit(user: User): boolean {
+        const allowed = ['admin', 'editor']
+        return this.checkAuthorization(user, allowed)
+    }
+
+    canDelete(user: User): boolean {
+        const allowed = ['admin']
+        return this.checkAuthorization(user, allowed)
+    }
+
+
+
+    // determines if user has matching role
+    private checkAuthorization(user: User, allowedRoles: string[]): boolean {
+        if (!user) return false
+        for (const role of allowedRoles) {
+            if (user.roles[role]) {
+                return true
+            }
+        }
+        return false
+    }
+
+
+
 }

@@ -19,6 +19,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
+import { LoginComponent } from './login/login.component';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -47,7 +48,7 @@ export const firebaseConfig = environment.firebaseConfig;
     ],
     declarations: [Tab1Page,PlacesListComponent,
         PlacesFormComponent,
-        PlacesMapComponent],
+        PlacesMapComponent,LoginComponent],
     providers:[
         AuthService
     ]

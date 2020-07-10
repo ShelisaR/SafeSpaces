@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Place } from '../places.model';
 import { HttpClient } from '@angular/common/http';
+import { PlacesService } from '../places.service';
 
 @Component({
     selector: 'app-places-map',
