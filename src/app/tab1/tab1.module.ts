@@ -16,6 +16,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AgmCoreModule } from '@agm/core';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/auth.service';
 
 export const firebaseConfig = environment.firebaseConfig;
 
@@ -31,7 +34,8 @@ export const firebaseConfig = environment.firebaseConfig;
         Tab1PageRoutingModule,
         AngularFireDatabaseModule,
         AngularFirestoreModule,
-
+        AngularFireAuthModule,
+        FormsModule,
 
 
         AngularFireModule.initializeApp(firebaseConfig),
@@ -44,7 +48,9 @@ export const firebaseConfig = environment.firebaseConfig;
     declarations: [Tab1Page,PlacesListComponent,
         PlacesFormComponent,
         PlacesMapComponent],
-    providers:[]
+    providers:[
+        AuthService
+    ]
 
 })
 export class Tab1PageModule { }

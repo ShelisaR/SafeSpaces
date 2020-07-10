@@ -17,6 +17,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AgmCoreModule } from '@agm/core';
 import { firebaseConfig } from './tab1/tab1.module';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from './auth.service';
 export const firebase = environment.firebaseConfig;
 
 
@@ -29,6 +32,8 @@ export const firebase = environment.firebaseConfig;
 
 		AngularFireModule.initializeApp(firebaseConfig),
 		AngularFireDatabaseModule,
+		AngularFireAuthModule,
+		FormsModule,
 		AgmCoreModule.forRoot({
 			apiKey: environment.googleMapsKey
 
@@ -40,7 +45,7 @@ export const firebase = environment.firebaseConfig;
 	providers: [
 		StatusBar,
 		SplashScreen,
-
+		AuthService,
 		
 		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 	],

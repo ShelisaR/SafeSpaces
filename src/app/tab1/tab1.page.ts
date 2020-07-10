@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PlacesService } from './places.service';
-
+import { AuthService } from 'src/app/auth.service';
 
 
 @Component({
@@ -9,7 +9,23 @@ import { PlacesService } from './places.service';
     styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+    email: string;
+    password: string;
 
-    constructor(private placesService: PlacesService) { }
+    constructor(private placesService: PlacesService, public authService: AuthService) { }
     places$ = this.placesService.places$;
+
+    signup() {
+        this.authService.signup(this.email, this.password);
+        this.email = this.password = '';
+    }
+    
+    login() {
+        this.authService.login(this.email, this.password);
+        this.email = this.password = '';
+    }
+
+    logout() {
+        this.authService.logout();
+    }
 }

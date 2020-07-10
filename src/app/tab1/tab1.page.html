@@ -1,11 +1,30 @@
-<div class="places">
-    <app-places-form></app-places-form>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div id="login" *ngIf="!(authService.user | async)">
+                    <ion-input type="text" [(ngModel)]="email" placeholder="Enter email"></ion-input>
+                    <ion-input type="password" [(ngModel)]="password" placeholder="Enter password"></ion-input>
+                    
+                    <ion-button (click)="signup()" [disabled]="!email || !password">Signup</ion-button>
+
+                    <ion-button (click)="login()" [disabled]="!email || !password">Login</ion-button>
+                </div>
+                
+                <ion-button (click)="logout()" *ngIf="authService.user | async">Logout</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <div class="places">
+    <app-places-form *ngIf="authService.user | async"></app-places-form>
     <div class="columns" *ngIf="places$ | async as places">
         <div class="places-list">
-            <app-places-list [places]="places"></app-places-list>
+            <app-places-list [places]="places" *ngIf="authService.user | async"></app-places-list>
         </div>
-        <div class="map">
+        <div class="map" *ngIf="authService.user | async">
             <app-places-map [places]="places"></app-places-map>
         </div>
     </div>
 </div>
+</ion-content>
