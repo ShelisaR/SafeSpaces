@@ -10,14 +10,14 @@ import { PlacesService } from '../places.service';
 })
 export class PlacesMapComponent {
     @Input() places: Place[];
-   
+    places$ = this.placesService.places$;
 
     //This will define the center of the map
 
     lat: any;
     lng: any;
 
-    constructor() {
+    constructor(private placesService: PlacesService) {
         if (navigator) {
             navigator.geolocation.getCurrentPosition(pos => {
                 this.lng = +pos.coords.longitude;
