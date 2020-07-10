@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { PlacesService } from './places.service';
 import { AuthService } from 'src/app/auth.service';
+import { database } from 'firebase';
+import { $ } from 'protractor';
 
 
 @Component({
@@ -19,10 +21,14 @@ export class Tab1Page {
         this.authService.signup(this.email, this.password);
         this.email = this.password = '';
     }
-    
+
     login() {
         this.authService.login(this.email, this.password);
         this.email = this.password = '';
+    }
+
+    googleLogin() {
+        this.authService.loginWithGoogle();
     }
 
     logout() {

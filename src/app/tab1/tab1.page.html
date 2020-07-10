@@ -9,6 +9,8 @@
                     <ion-button (click)="signup()" [disabled]="!email || !password">Signup</ion-button>
 
                     <ion-button (click)="login()" [disabled]="!email || !password">Login</ion-button>
+
+                    <ion-button (click)="googleLogin()">Google</ion-button>
                 </div>
                 
                 <ion-button (click)="logout()" *ngIf="authService.user | async">Logout</ion-button>

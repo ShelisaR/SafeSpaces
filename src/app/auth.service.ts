@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
+import { auth } from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class AuthService {
       console.log('fail', err.message);
     });
   }
+
   login(email: string, password: string) {
     this.firebaseAuth
     .signInWithEmailAndPassword(email, password)
@@ -30,6 +32,16 @@ export class AuthService {
     .catch(err => {
       console.log('fail', err.message);
     });
+  }
+
+  async loginWithGoogle() {
+    this.firebaseAuth.signInWithPopup(new auth.GoogleAuthProvider())
+    .then(value => {
+      console.log('google works');
+    })
+    .catch(err => {
+      console.log('google fail', err.message);
+    })
   }
 
   logout() {
