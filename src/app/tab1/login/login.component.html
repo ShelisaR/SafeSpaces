@@ -17,9 +17,15 @@
 <!-- User logged in -->
 <ng-template #authenticated>
     <div *ngIf="auth.user$ | async as user">
-        <h3>Howdy, {{ user.displayName }}</h3>
-       
-      
-        <button (click)="auth.signOut()">Logout</button>
+        <img src="{{ user.photoURL }}">
+        <h5>{{ user.displayName }}</h5>
+        <p>{{ user.email }}</p>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="2" offset="3">
+                    <ion-button class="ion-padding" (click)="auth.signOut()">Logout</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
     </div>
 </ng-template>
