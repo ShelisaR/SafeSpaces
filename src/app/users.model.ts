@@ -5,7 +5,7 @@ export interface User {
     displayName?: string;
     myCustomData?: string;
     isAdmin: boolean;
-    roles: Roles;
+    
 }
 export interface Roles {
     subscriber?: boolean;

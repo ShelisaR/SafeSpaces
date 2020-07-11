@@ -1,36 +1,51 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './users.model';
-
+import { User} from './users.model';
 import { auth } from 'firebase/app';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+
+
+
+
 @Injectable({ providedIn: 'root' })
+
 export class AuthService {
 
-    user$: Observable<User>;
 
+
+    user$: Observable<User>;
     constructor(
         private afAuth: AngularFireAuth,
         private afs: AngularFirestore,
         private router: Router
     ) {
+
         // Get the auth state, then fetch the Firestore user document or return null
+
         this.user$ = this.afAuth.authState.pipe(
+
             switchMap(user => {
-                // Logged in
+
                 if (user) {
+
                     return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+
                 } else {
+
                     // Logged out
+
                     return of(null);
+
                 }
+
             })
+
         )
+
     }
 
     async googleSignin() {
@@ -48,10 +63,8 @@ export class AuthService {
             email: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            isAdmin:user.admin,
-            roles: {
-                subscriber: true
-            }
+            isAdmin:user.isAdmin
+           
         }
 
         return userRef.set(data, { merge: true })
@@ -62,34 +75,5 @@ export class AuthService {
         await this.afAuth.signOut();
         this.router.navigate(['/']);
     }
-    canRead(user: User): boolean {
-        const allowed = ['admin', 'editor', 'subscriber']
-        return this.checkAuthorization(user, allowed)
-    }
-
-    canEdit(user: User): boolean {
-        const allowed = ['admin', 'editor']
-        return this.checkAuthorization(user, allowed)
-    }
-
-    canDelete(user: User): boolean {
-        const allowed = ['admin']
-        return this.checkAuthorization(user, allowed)
-    }
-
-
-
-    // determines if user has matching role
-    private checkAuthorization(user: User, allowedRoles: string[]): boolean {
-        if (!user) return false
-        for (const role of allowedRoles) {
-            if (user.roles[role]) {
-                return true
-            }
-        }
-        return false
-    }
-
-
 
 }

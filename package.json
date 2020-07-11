@@ -42,6 +42,7 @@
     "jszip": "^3.3.0",
     "ng4-us-map": "^1.0.3",
     "ngeohash": "^0.6.3",
+    "observable": "^2.1.4",
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "^6.6.0",
     "splash-screen": "^4.0.1",

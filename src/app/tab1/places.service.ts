@@ -18,7 +18,7 @@ export class PlacesService {
             return actions.map(p => {
                 const place = p.payload.doc;
                 const id = place.id;
-                return { id: place.id, ... place.data() as Place }
+                return { id, ...(place.data() as {}) } as Place;
               
             });
         })
