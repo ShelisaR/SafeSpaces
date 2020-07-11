@@ -3,6 +3,7 @@ import { Place } from '../places.model';
 import { HttpClient } from '@angular/common/http';
 import { PlacesService } from '../places.service';
 
+import { mapStyle } from '../../place.mapstyle';
 @Component({
     selector: 'app-places-map',
     templateUrl: './places-map.component.html',
@@ -11,9 +12,8 @@ import { PlacesService } from '../places.service';
 export class PlacesMapComponent {
     @Input() places: Place[];
     places$ = this.placesService.places$;
-
-    //This will define the center of the map
-
+    mapStyle = mapStyle;
+   
     lat: any;
     lng: any;
 
@@ -24,6 +24,10 @@ export class PlacesMapComponent {
                 this.lat = +pos.coords.latitude;
             });
         }
+
+
+
+      
     }
 }
 

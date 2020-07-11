@@ -5,9 +5,10 @@
     "\\src\\app",
     "\\src\\app\\tab1",
     "\\src\\app\\tab1\\login",
-    "\\src\\environments",
-    "\\src\\theme"
+    "\\src\\app\\tab1\\places-map",
+    "\\src\\assets",
+    "\\src\\assets\\icon"
   ],
-  "SelectedNode": "\\src\\app\\tab1\\tab1.page.ts",
+  "SelectedNode": "\\src\\app\\tab1\\places-map\\places-map.component.ts",
   "PreviewInSolutionExplorer": false
 }

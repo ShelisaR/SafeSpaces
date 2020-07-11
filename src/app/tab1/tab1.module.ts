@@ -21,7 +21,10 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/auth.service';
 import { LoginComponent } from './login/login.component';
 
+
+
 export const firebaseConfig = environment.firebaseConfig;
+
 
 
 
@@ -37,6 +40,11 @@ export const firebaseConfig = environment.firebaseConfig;
         AngularFirestoreModule,
         AngularFireAuthModule,
         FormsModule,
+    
+     
+     
+       
+        
 
 
         AngularFireModule.initializeApp(firebaseConfig),
