@@ -4,12 +4,17 @@
 
 <!-- User NOT logged in -->
 <ng-template #guest>
-    
+    <h5>Howdy, GUEST</h5>
     <p>Login to get started...</p>
-
-    <button (click)="auth.googleSignin()">
-        <i class="fa fa-google"></i> Connect Google
-    </button>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="3" offset="2">
+                <ion-button (click)="auth.googleSignin()">
+                    <i class="fa fa-google"></i> Connect Google
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
 </ng-template>
 
@@ -23,7 +28,7 @@
         <ion-grid>
             <ion-row>
                 <ion-col size="2" offset="3">
-                    <ion-button class="ion-padding" (click)="auth.signOut()">Logout</ion-button>
+                    <ion-button class="ion-padding" (click)="auth.signOut()" (click)="logoutAlert()">Logout</ion-button>
                 </ion-col>
             </ion-row>
         </ion-grid>
