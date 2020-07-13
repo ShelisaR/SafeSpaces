@@ -1,7 +1,7 @@
 import { Component, } from '@angular/core';
-import { PlacesService } from './places.service';
+import { PlacesService } from '../tab1/services/places.service';
 import { database } from 'firebase';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../tab1/services/auth.service';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';

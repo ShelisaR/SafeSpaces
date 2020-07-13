@@ -18,7 +18,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/app/tab1/services/auth.service';
 import { LoginComponent } from './login/login.component';
 
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Place } from './places.model';
+import { Place } from '../models/places.model';
 import { map } from 'rxjs/operators';
 
 @Injectable({

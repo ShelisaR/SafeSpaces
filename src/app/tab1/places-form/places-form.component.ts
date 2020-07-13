@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { PlacesService } from '../places.service';
+import { PlacesService } from '../services/places.service';
 @Component({
   selector: 'app-places-form',
   templateUrl: './places-form.component.html',

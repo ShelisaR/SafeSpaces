@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Tab1Page } from './tab1.page';
-import { AuthGuard} from '../auth.guard'
+import { AuthGuard} from '../guard/auth.guard'
 import { PlacesFormComponent } from './places-form/places-form.component';
 import { PlacesListComponent } from './places-list/places-list.component';
 import { PlacesMapComponent } from './places-map/places-map.component';

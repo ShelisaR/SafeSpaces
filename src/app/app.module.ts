@@ -19,7 +19,7 @@ import { AgmCoreModule } from '@agm/core';
 import { firebaseConfig } from './tab1/tab1.module';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from './auth.service';
+import { AuthService } from '../app/tab1/services/auth.service';
 export const firebase = environment.firebaseConfig;
 
 
