@@ -25,11 +25,11 @@
             <div class="columns" *ngIf="places$ | async as places">
 
                 <div class="places-list">
-                    <app-places-list [places]="places" *ngIf="(user | async)?.isAdmin" ></app-places-list>
+                    <app-places-list [places]="places" *ngIf="(user | async)?.isAdmin"></app-places-list>
                 </div>
-
+             
                 <div class="map">
-                    <app-places-map [places]="places" ></app-places-map>
+                    <app-places-map [places]="places"></app-places-map>
                 </div>
             </div>
         </div>

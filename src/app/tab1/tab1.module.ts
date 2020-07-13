@@ -40,7 +40,7 @@ export const firebaseConfig = environment.firebaseConfig;
         AngularFirestoreModule,
         AngularFireAuthModule,
         FormsModule,
-    
+       
      
      
        
@@ -50,8 +50,10 @@ export const firebaseConfig = environment.firebaseConfig;
         AngularFireModule.initializeApp(firebaseConfig),
 
         AgmCoreModule.forRoot({
-            apiKey: environment.googleMapsKey
+            apiKey: environment.googleMapsKey,
+            libraries: ["places"]
         })
+
 
     ],
     declarations: [Tab1Page,PlacesListComponent,
