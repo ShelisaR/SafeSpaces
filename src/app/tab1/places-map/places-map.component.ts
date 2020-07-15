@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { PlacesService } from '../services/places.service';
 
 import { mapStyle } from '../../place.mapstyle';
+import { FormControl } from '@angular/forms';
+
 @Component({
     selector: 'app-places-map',
     templateUrl: './places-map.component.html',
@@ -17,6 +19,11 @@ export class PlacesMapComponent {
     lat: any;
     lng: any;
 
+    public searchTerm: string = "";
+    public searchControl: FormControl;
+    public items: any;
+    showResult = false;
+
     constructor(private placesService: PlacesService) {
         if (navigator) {
             navigator.geolocation.getCurrentPosition(pos => {
@@ -25,10 +32,22 @@ export class PlacesMapComponent {
             });
         }
 
+        this.searchControl = new FormControl();
+    }
 
+    setFilteredItems() {
+        this.items = this.filterItems(this.searchTerm);
+    }
 
-      
+    filterItems(searchTerm) {
+        if (searchTerm && searchTerm.trim() !== '') {
+            this.showResult = true;
+            return this.places.filter(item => {
+                return item.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+            })
+        }
+        else {
+            this.showResult = false;
+        }
     }
 }
-
- 

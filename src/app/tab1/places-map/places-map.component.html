@@ -1,5 +1,11 @@
+<ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="Search for a place"></ion-searchbar>
+<ion-list *ngIf="showResult">
+    <ion-item *ngFor="let item of items">{{ item.name }}</ion-item>
+</ion-list>
+
 <div class="places">
     <div class="map">
+        
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="7" >         <!--THIS IS THE START OF THE MAP COMPONENT -->      
 
             <agm-marker  [latitude]="lat" [longitude]="lng" >        <!--This gets the latitude and longitude  of the user location and displays  it as a marker. *THIS MARKER IS ONLY FOR THE USER MARKER NOT THE BUILDINGS*-->     
