@@ -1,13 +1,3 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Safe Spaces</ion-title>
-    </ion-toolbar>
-</ion-header>
-
-
 <ion-content>
     <ion-menu side="start" content-id="main-content">
         <ion-content color="light">
@@ -27,7 +17,7 @@
                 <div class="places-list">
                     <app-places-list [places]="places" *ngIf="(user | async)?.isAdmin"></app-places-list>
                 </div>
-             
+                
                 <div class="map">
                     <app-places-map [places]="places"></app-places-map>
                 </div>

@@ -20,7 +20,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/tab1/services/auth.service';
 import { LoginComponent } from './login/login.component';
-
+import { PlacesinfoComponent } from './placesinfo/placesinfo.component';
 
 
 export const firebaseConfig = environment.firebaseConfig;
@@ -40,6 +40,7 @@ export const firebaseConfig = environment.firebaseConfig;
         AngularFirestoreModule,
         AngularFireAuthModule,
         FormsModule,
+        PlacesinfoComponent,
        
      
      
