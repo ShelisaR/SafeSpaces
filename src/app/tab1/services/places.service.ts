@@ -52,4 +52,10 @@ export class PlacesService {
             console.log(err);
         }
     }
+    getDetails() {
+        return this.places$
+    }
+    getDetail(id) {
+        return this.firestorePlacesCollection.doc<Place>(id).valueChanges();
+    }
 }

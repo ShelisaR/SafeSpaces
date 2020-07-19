@@ -4,9 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\tab1",
+    "\\src\\app\\tab1\\places-detail",
     "\\src\\app\\tab1\\places-map",
-    "\\src\\assets",
-    "\\src\\assets\\icon"
+    "\\src\\app\\tab1\\services",
+    "\\src\\app\\tab2",
+    "\\src\\app\\tab2\\educationaresources",
+    "\\src\\app\\tabs"
   ],
   "SelectedNode": "\\src\\app\\tab1\\places-map\\places-map.component.ts",
   "PreviewInSolutionExplorer": false

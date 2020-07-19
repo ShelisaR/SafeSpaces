@@ -2,37 +2,38 @@
     <div class="map">
 
         <agm-map [latitude]="lat" [longitude]="lng" [zoom]="7">
-            
+
 
             <agm-marker [latitude]="lat" [longitude]="lng">
-              
+
                 <agm-marker *ngFor="let p of places"
                             [latitude]="p.lat"
                             [longitude]="p.long">
 
                     <agm-info-window>
-                      
 
-                        <p>{{p.name}}</p>               
-                        <p>{{p.des}}</p>                  
-                        <p>{{p.address}}</p>              
 
-                    </agm-info-window>             
+                        <p>{{p.name}}</p>
+                        <p>{{p.des}}</p>
+                        <p>{{p.address}}</p>
 
-                </agm-marker>            
+                    </agm-info-window>
+
+                </agm-marker>
 
 
                 <agm-info-window>
-                  
-                    <p>You are Here</p>     
-                </agm-info-window>     
 
-            </agm-marker>             
+                    <p>You are Here</p>
+                </agm-info-window>
 
-        </agm-map>                     
+            </agm-marker>
+
+        </agm-map>
     </div>
+
+    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="Search for a place"></ion-searchbar>
+    <ion-list *ngIf="showResult">
+        <ion-item *ngFor="let item of items" button="true" [routerLink]="['./details/'+ item.id]" routerDirection="forward"><p><b>{{ item.name }}</b><br><p id="address">{{ item.address }}</p></ion-item>
+    </ion-list>
 </div>
-<ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="Search for a place"></ion-searchbar>
-<ion-list *ngIf="showResult">
-    <ion-item *ngFor="let item of items" button="true"><p><b>{{ item.name }}</b><br><p id="address">{{ item.address }}</p></ion-item>
-</ion-list>
