@@ -1,18 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input,OnInit } from '@angular/core';
 import { Place } from '../models/places.model';
 import { HttpClient } from '@angular/common/http';
 import { PlacesService } from '../services/places.service';
 
 import { mapStyle } from '../../place.mapstyle';
 import { FormControl } from '@angular/forms';
-
+import { ModalController, NavController } from '@ionic/angular';
+import { PlacesDetailModalPage } from './places-detail-modal/places-detail-modal.page';
 
 @Component({
     selector: 'app-places-map',
     templateUrl: './places-map.component.html',
     styleUrls: ['./places-map.component.scss']
 })
-export class PlacesMapComponent {
+export class PlacesMapComponent implements OnInit {
     @Input() places: Place[];
     places$ = this.placesService.places$;
     mapStyle = mapStyle;
@@ -25,7 +26,7 @@ export class PlacesMapComponent {
     public items: any;
     showResult = false;
 
-    constructor(private placesService: PlacesService) {
+    constructor(private placesService: PlacesService, private modalController: ModalController) {
         if (navigator) {
             navigator.geolocation.getCurrentPosition(pos => {
                 this.lng = +pos.coords.longitude;
@@ -35,6 +36,9 @@ export class PlacesMapComponent {
 
         this.searchControl = new FormControl();
     }
+    ngOnInit() {
+    }
+
 
     setFilteredItems() {
         this.items = this.filterItems(this.searchTerm);
@@ -52,6 +56,19 @@ export class PlacesMapComponent {
         }
     }
 
+    openFullModal(showResult) {
+        this.modalController.create({
+            component: PlacesDetailModalPage,
+
+            componentProps: {
+                data: this.showResult
+               
+               
+            }
+        }).then(modal => {
+            modal.present();
+        });
+    }
 
 
 }

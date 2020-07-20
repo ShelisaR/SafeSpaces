@@ -5,7 +5,7 @@ import { AuthGuard} from '../guard/auth.guard'
 import { PlacesFormComponent } from './places-form/places-form.component';
 import { PlacesListComponent } from './places-list/places-list.component';
 import { PlacesMapComponent } from './places-map/places-map.component';
-import { PlacesDetailComponent } from './places-detail/places-detail.component';
+
 
 
 
@@ -15,16 +15,11 @@ const routes: Routes = [
         component: Tab1Page,
         pathMatch: 'full'
     },
-    {
 
-        path: 'details/:id',
-        component: PlacesDetailComponent,
-       
-    },
             
         
     { path: 'app-places-form', component: PlacesFormComponent, canActivate: [AuthGuard] },
-    { path: 'app-places-list', component: PlacesFormComponent, canActivate: [AuthGuard] },
+    { path: 'app-places-list', component: PlacesListComponent, canActivate: [AuthGuard] },
     
 
 ];

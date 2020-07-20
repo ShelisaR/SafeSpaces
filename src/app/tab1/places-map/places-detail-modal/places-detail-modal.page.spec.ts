@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PlacesDetailComponent } from './places-detail.component';
+import { PlacesDetailModalPage } from './places-detail-modal.page';
 
-describe('PlacesDetailComponent', () => {
-  let component: PlacesDetailComponent;
-  let fixture: ComponentFixture<PlacesDetailComponent>;
+describe('PlacesDetailModalPage', () => {
+  let component: PlacesDetailModalPage;
+  let fixture: ComponentFixture<PlacesDetailModalPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlacesDetailComponent ],
+      declarations: [ PlacesDetailModalPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PlacesDetailComponent);
+    fixture = TestBed.createComponent(PlacesDetailModalPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

@@ -34,6 +34,6 @@
 
     <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="Search for a place"></ion-searchbar>
     <ion-list *ngIf="showResult">
-        <ion-item *ngFor="let item of items" button="true" [routerLink]="['./details/'+ item.id]" routerDirection="forward"><p><b>{{ item.name }}</b><br><p id="address">{{ item.address }}</p></ion-item>
+        <ion-item *ngFor="let item of items" button="true" (click)="openFullModal()"><p><b>{{ item.name }}</b><br><p id="address">{{ item.address }}</p></ion-item>
     </ion-list>
 </div>
