@@ -6,6 +6,7 @@ import { PlacesService } from '../services/places.service';
 import { mapStyle } from '../../place.mapstyle';
 import { FormControl } from '@angular/forms';
 
+
 @Component({
     selector: 'app-places-map',
     templateUrl: './places-map.component.html',
@@ -50,4 +51,7 @@ export class PlacesMapComponent {
             this.showResult = false;
         }
     }
+
+
+
 }
