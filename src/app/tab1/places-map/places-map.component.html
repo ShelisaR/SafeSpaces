@@ -33,13 +33,14 @@
 
     <ion-searchbar #searchbar placeholder="Search places" showCancelButton (ionInput)="filterList($event)" (ionCancel)="close()" cancelButtonText="close"></ion-searchbar>
     <ion-list>
-        <ion-card *ngFor="let result of resultList">
+        <ion-card *ngFor="let result of resultList" color="light">
 
-            <ion-item>
+            <ion-item color="medium">
                 {{ result.name }}
             </ion-item>
             <ion-card-content>
-                <p>{{result.name}}</p>
+                <p id="name">{{result.name}}</p>
+                <p>{{result.address}}</p>
                 <p> {{result.des}}</p>
             </ion-card-content>
 
