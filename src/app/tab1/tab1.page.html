@@ -1,16 +1,21 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="primary">
         <ion-buttons slot="start">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Safe Spaces</ion-title>
+
+        <ion-title>
+            <ion-icon name="earth-sharp">
+            </ion-icon>
+            SafeSpaces
+        </ion-title>
     </ion-toolbar>
 </ion-header>
 
 
 <ion-content>
     <ion-menu side="start" content-id="main-content">
-        <ion-content color="light">
+        <ion-content>
             <app-login></app-login>
         </ion-content>
     </ion-menu>
