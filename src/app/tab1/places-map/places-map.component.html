@@ -32,8 +32,18 @@
         </agm-map>
     </div>
 
-    <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="setFilteredItems()" placeholder="Search for a place"></ion-searchbar>
-    <ion-list *ngIf="showResult">
-        <ion-item *ngFor="let item of items" button="true" (click)="openFullModal()"><p><b>{{ item.name }}</b><br><p id="address">{{ item.address }}</p></ion-item>
-    </ion-list>
+    <ion-searchbar #searchbar placeholder="Search places" showCancelButton (ionInput)="filterList($event)" (ionCancel)="close()" cancelButtonText="close"></ion-searchbar>
+    <ion-list>
+        <ion-card *ngFor="let result of resultList">
+
+            <ion-item>
+                {{ result.name }}
+            </ion-item>
+            <ion-card-content>
+                <p>{{result.name}}</p>
+                <p> {{result.des}}</p>
+            </ion-card-content>
+
+            </ion-card>
+</ion-list>
 </div>

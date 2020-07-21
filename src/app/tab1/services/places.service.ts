@@ -52,10 +52,43 @@ export class PlacesService {
             console.log(err);
         }
     }
-    getDetails() {
-        return this.places$
+
+    searchPlaces() {
+        console.log("start searchPlaces");
+       
+
+        return this.firestore.collection<any>('places').snapshotChanges().pipe(
+            map(actions => {
+                return actions.map(a => {
+                    const data = a.payload.doc.data();
+                    // get id from firebase metadata 
+                    const id = a.payload.doc.id;
+                    return { id, ...data };
+                });
+            })
+        );
+
     }
-    getDetail(id) {
-        return this.firestorePlacesCollection.doc<Place>(id).valueChanges();
+
+
+    getPlaces() {
+        return this.firestore.collection<any>('places').snapshotChanges().pipe(
+            map(actions => {
+                return actions.map(a => {
+                    const data = a.payload.doc.data();
+                    // get id from firebase metadata 
+                    const id = a.payload.doc.id;
+                    return { id, ...data };
+                });
+            })
+        );
     }
+   
+    getPlacesDetail(id: string) {
+        console.log("3_____Place.Service call getPlacesDetail()");
+        return this.firestore.doc<any>('places/' + id).valueChanges();
+
+    }
+
+
 }

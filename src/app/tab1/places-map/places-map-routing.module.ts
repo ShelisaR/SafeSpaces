@@ -12,10 +12,7 @@ const routes: Routes = [
         path: '',
         component: PlacesMapComponent,
        
-    },  {
-    path: 'places-detail-modal',
-    loadChildren: () => import('./places-detail-modal/places-detail-modal.module').then( m => m.PlacesDetailModalPageModule)
-  },
+    }, 
 
 
 ];

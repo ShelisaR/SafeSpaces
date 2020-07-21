@@ -6,7 +6,8 @@ import { PlacesDetailModalPage } from './places-detail-modal.page';
 const routes: Routes = [
   {
     path: '',
-    component: PlacesDetailModalPage
+        component: PlacesDetailModalPage,
+        pathMatch: 'full' 
   }
 ];
 
