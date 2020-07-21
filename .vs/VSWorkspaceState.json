@@ -4,12 +4,12 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\tab1",
-    "\\src\\app\\tab1\\guard",
     "\\src\\app\\tab1\\places-map",
-    "\\src\\app\\tab1\\places-map\\places-detail-modal",
-    "\\src\\app\\tab2",
-    "\\src\\app\\tab2\\covid19tracker"
+    "\\src\\app\\tab2\\educationaresources",
+    "\\src\\app\\tab3",
+    "\\src\\app\\tabs",
+    "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\app\\tab1\\guard\\auth.guard.ts",
+  "SelectedNode": "\\src\\app\\tab1\\places-map\\places-map.component.ts",
   "PreviewInSolutionExplorer": false
 }

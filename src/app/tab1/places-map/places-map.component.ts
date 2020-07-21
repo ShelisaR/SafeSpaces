@@ -9,6 +9,7 @@ import {  NavController, IonSearchbar } from '@ionic/angular';
 import { PlacesDetailModalPage } from './places-detail-modal/places-detail-modal.page';
 import { Router, ActivatedRoute } from '@angular/router';
 import { IonicComponentService } from '../services/ionic-component.service';
+import { url } from 'inspector';
 
 @Component({
     selector: 'app-places-map',
@@ -19,6 +20,8 @@ export class PlacesMapComponent implements OnInit {
     @Input() places: Place[];
     places$ = this.placesService.places$;
     mapStyle = mapStyle;
+    icon: any;
+
 
     @ViewChild('searchbar') searchbar: IonSearchbar;
     public resultList: any[];
@@ -98,6 +101,8 @@ export class PlacesMapComponent implements OnInit {
 
     }
 }
+
+
 
 
 
