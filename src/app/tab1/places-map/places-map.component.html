@@ -31,7 +31,7 @@
         </agm-map>
     </div>
 
-    <ion-searchbar #searchbar placeholder="Search places" showCancelButton (ionInput)="filterList($event)" (ionCancel)="close()" cancelButtonText="close"></ion-searchbar>
+    <ion-searchbar #searchbar placeholder="Search places" (ionInput)="filterList($event)" (ionCancel)="close()" cancelButtonText="close"  color="secondary"></ion-searchbar>
     <ion-list>
         <ion-card *ngFor="let result of resultList" color="light">
 
