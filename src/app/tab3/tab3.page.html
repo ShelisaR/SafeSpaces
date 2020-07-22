@@ -1,14 +1,14 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>
+    <ion-title align="center">
       Forms
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color>
   <form [formGroup]="suggestionForm">
-    <ion-grid>
+    <ion-grid color="secondary">
       <ion-row>
         <ion-col size-sm="10" offset-sm="1" size-lg="6" offset-lg="3">
           <ion-list lines="full">
@@ -18,7 +18,7 @@
               <ion-input type="text" formControlName="suggestionFormName" [(ngModel)]="itemName"></ion-input>
             </ion-item>
       
-            <ion-item color="light">
+            <ion-item color>
               <ion-label position="floating" class="label">Type*</ion-label>
               <ion-select class="label" interface="popover" formControlName="suggestionFormType" [(ngModel)]="itemType">
                 <ion-select-option value="restaurant">Restaurant</ion-select-option>
