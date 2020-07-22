@@ -1,6 +1,6 @@
 <ion-header [translucent]="false">
 
-    <ion-toolbar>
+    <ion-toolbar color="primary">
         <ion-buttons  slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -16,83 +16,85 @@
 
 
 
-<ion-content [fullscreen]="false">
+<ion-content [fullscreen]="false" color="secondary">
+    <ion-content color="secondary">
+        <ion-searchbar color="secondary"></ion-searchbar>
 
-    <ion-searchbar></ion-searchbar>
+        <ion-content color="secondary">
+            <ion-list color="secondary">
 
-    <ion-list>
+                <ion-card *ngFor="let country of countries" color="primary">
 
-        <ion-card *ngFor="let country of countries">
+                    <ion-item color="primary">
 
-            <ion-item>
+                        <ion-label align="center">{{country.Country}}</ion-label>
 
-                <ion-label>{{country.Country}}</ion-label>
-
-            </ion-item>
-
+                    </ion-item>
 
 
-            <ion-card-content>
 
-                <table>
+                    <ion-card-content color="secondary">
 
-                    <tr>
+                        <table color="secondary">
 
-                        <td colspan="2">
-                            Total Cases : <ion-text color="">{{country?.TotalConfirmed | number}}</ion-text>
+                            <tr color="secondary">
 
-                        </td>
+                                <td colspan="2">
+                                    Total Cases : <ion-text color="">{{country?.TotalConfirmed | number}}</ion-text>
 
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </td>
 
-                        <td>
-                            New Cases : <ion-text color="warning">{{country?.NewConfirmed | number}}</ion-text>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-                        </td>
+                                <td>
+                                    New Cases : <ion-text color="warning">{{country?.NewConfirmed | number}}</ion-text>
 
-                    </tr>
+                                </td>
 
-                    <tr>
+                            </tr>
 
-                        <td colspan="2">
-                            Total Recovered : <ion-text color="success">{{country?.TotalRecovered | number}}</ion-text>
+                            <tr>
 
-                        </td>
+                                <td colspan="2">
+                                    Total Recovered : <ion-text color="success">{{country?.TotalRecovered | number}}</ion-text>
 
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </td>
 
-                        <td>
-                            New Recovered : <ion-text color="success">{{country?.NewRecovered | number}}</ion-text>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-                        </td>
+                                <td>
+                                    New Recovered : <ion-text color="success">{{country?.NewRecovered | number}}</ion-text>
 
-                    </tr>
+                                </td>
 
-                    <tr>
+                            </tr>
 
-                        <td colspan="2">
-                            Total Deaths : <ion-text color="danger">{{country?.TotalDeaths | number}}</ion-text>
+                            <tr>
 
-                        </td>
+                                <td colspan="2">
+                                    Total Deaths : <ion-text color="danger">{{country?.TotalDeaths | number}}</ion-text>
 
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                </td>
 
-                        <td>
-                            New Deaths : <ion-text color="danger">
-                                {{country?.NewDeaths | number}}
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
 
-                            </ion-text>
+                                <td>
+                                    New Deaths : <ion-text color="danger">
+                                        {{country?.NewDeaths | number}}
 
-                        </td>
+                                    </ion-text>
 
-                    </tr>
+                                </td>
 
-                </table>
+                            </tr>
 
-            </ion-card-content>
+                        </table>
 
-        </ion-card>
+                    </ion-card-content>
 
-    </ion-list>
+                </ion-card>
 
+            </ion-list>
+        </ion-content>
+    </ion-content>
 </ion-content>
