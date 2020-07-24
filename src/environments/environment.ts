@@ -15,7 +15,7 @@ export const environment = {
         messagingSenderId: "83340146741",
         appId: "1:83340146741:web:433f49b98287c04244597c"
     },
-    googleMapsKey: 'AIzaSyDNo7Wd35fI0npchlKTu2m1mkSrhVLWMtU'
+    googleMapsKey: 'AIzaSyCa7WWB_jVrRyeVvTwG1-l-VKaU1Momlfg'
 };
 /*
  * For easier debugging in development mode, you can import the following file
