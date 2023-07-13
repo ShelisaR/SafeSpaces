@@ -46,7 +46,7 @@
     "igniteui-angular": "^9.1.2",
     "install": "^0.13.0",
     "ionic-angular": "^3.9.10",
-    "jszip": "^3.3.0",
+    "jszip": "^3.8.0",
     "mat-icon-import": "^0.1.1",
     "ng4-us-map": "^1.0.3",
     "ngeohash": "^0.6.3",
